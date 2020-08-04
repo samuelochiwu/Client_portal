@@ -1,0 +1,332 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
+<style>
+  body {
+    margin-top:40px;
+}
+.stepwizard-step p {
+    margin-top: 10px;
+}
+.stepwizard-row {
+    display: table-row;
+}
+.stepwizard {
+    display: table;
+    width: 90%;
+    position: relative;
+}
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+}
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+
+.disabled-control{
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+.modal-dialog {
+
+    min-width: 70%;
+
+	}
+
+.error-class{
+    border: 1px solid red !important;
+}
+</style>
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="stepwizard">
+    <div class="stepwizard-row setup-panel">
+      <div class="stepwizard-step">
+        <a href="#step-1" type="button" class="btn btn-primary btn-circle start-class">1</a>
+        <p>Student Details</p>
+      </div>
+      <div class="stepwizard-step">
+        <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+        <p>Student Medical</p>
+      </div>
+      <div class="stepwizard-step">
+        <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+        <p>Primary Contact</p>
+      </div>
+      <div class="stepwizard-step">
+        <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+        <p>Secondary Contact</p>
+      </div>
+      <div class="stepwizard-step">
+        <a href="#step-5" type="button" class="btn btn-default btn-circle end-class" disabled="disabled">5</a>
+        <p>Review & Submit</p>
+      </div>
+    </div>
+  </div>
+            </div>
+            <div class="modal-body">
+                   <div class="container" style="width:100%;">
+
+
+
+  <form role="form" action="" method="post">
+    <div class="row setup-content" id="step-1">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-12">
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button><h3> Step 1</h3>
+          <div class="form-group">
+            <label class="control-label">First Name</label>
+            <input maxlength="100" required="required" class="form-control" placeholder="Enter First Name" type="text">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Last Name</label>
+            <input maxlength="100" required="required" class="form-control" placeholder="Enter Last Name" type="text">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Address</label>
+            <textarea required="required" class="form-control" placeholder="Enter your address"></textarea>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row setup-content" id="step-2">
+      <div class="col-xs-6 col-md-offset-3">
+        <div class="col-md-12">
+          <h3> Step 2</h3>
+          <div class="form-group">
+            <label class="control-label">Company Name</label>
+            <input maxlength="200" required="required" class="form-control" placeholder="Enter Company Name" type="text">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Company Address</label>
+            <input maxlength="200" required="required" class="form-control" placeholder="Enter Company Address" type="text">
+          </div>
+          <button class="btn btn-primary prevBtn btn-lg pull-left disabled-control" type="button">Back</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="row setup-content" id="step-3">
+      <div class="col-xs-6 col-md-offset-3">
+        <div class="col-md-12">
+          <h3> Step 3</h3>
+          <div class="form-group">
+            <label class="control-label">Company Name</label>
+            <input maxlength="200" required="required" class="form-control" placeholder="Enter Company Name" type="text">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Company Address</label>
+            <input maxlength="200" required="required" class="form-control" placeholder="Enter Company Address" type="text">
+          </div>
+          <button class="btn btn-primary prevBtn btn-lg pull-left disabled-control" type="button">Back</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="row setup-content" id="step-4">
+      <div class="col-xs-6 col-md-offset-3">
+        <div class="col-md-12">
+          <h3> Step 4</h3>
+          <div class="form-group">
+            <label class="control-label">Company Name</label>
+            <input maxlength="200" required="required" class="form-control" placeholder="Enter Company Name" type="text">
+           </div>
+          <div class="form-group">
+            <label class="control-label">Company Address</label>
+            <input maxlength="200" required="required" class="form-control" placeholder="Enter Company Address" type="text">
+          </div>
+          <button class="btn btn-primary prevBtn btn-lg pull-left disabled-control" type="button">Back</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="row setup-content" id="step-5">
+      <div class="col-xs-6 col-md-offset-3">
+        <div class="col-md-12">
+          <h3> Step 5</h3>
+          <button class="btn btn-primary prevBtn btn-lg pull-left disabled-control" type="button">Back</button>
+          <button class="btn btn-success btn-lg pull-right" type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+				<button class="btn btn-primary prevBtn btn-lg pull-left disabled-control" type="button">Back</button>
+				<button style="color:red;" class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<script>
+  $(document).ready(function () {
+  var navListItems = $('div.setup-panel div a'),
+          allWells = $('.setup-content'),
+          allNextBtn = $('.nextBtn'),
+  		  allPrevBtn = $('.prevBtn');
+
+  allWells.hide();
+
+  navListItems.click(function (e) {
+      e.preventDefault();
+      var $target = $($(this).attr('href')),
+              $item = $(this);
+
+      if (!$item.hasClass('disabled')) {
+          navListItems.removeClass('btn-primary').addClass('btn-default');
+          $item.addClass('btn-primary');
+          allWells.hide();
+          $target.show();
+          $target.find('input:eq(0)').focus();
+      }
+  });
+
+  allPrevBtn.click(function(){
+      var setupwizard = $('.stepwizard-row');
+      var sel = setupwizard.find('.btn-primary');
+      var to_sel = sel.parent().prev().find('.btn-circle');
+      to_sel.trigger('click');
+
+      /* DISABLING AND ENABLING PREV AND NEXT
+         BUTTONS BASED ON CURRENT PAGE
+      */
+      if(to_sel.hasClass('start-class'))
+      {
+         $('.prevBtn').addClass('disabled-control');
+         $('.nextBtn').removeClass('disabled-control');
+      }
+      else if(to_sel.hasClass('end-class'))
+      {
+         $('.nextBtn').addClass('disabled-control');
+         $('.prevBtn').removeClass('disabled-control');
+      }
+      else
+      {
+         $('.nextBtn').removeClass('disabled-control');
+         $('.prevBtn').removeClass('disabled-control');
+      }
+
+  });
+
+
+
+$(document).on('click', '.nextBtn', function(){
+      var setupwizard = $('.stepwizard-row');
+      var sel = setupwizard.find('.btn-primary');
+      var to_sel = sel.parent().next().find('.btn-circle');
+      var err = 0;
+
+      var step = get_current_page_id();
+
+      /* CHECKING IF ALL INPUTS AND TEXTAREA IN THE CURRENT
+         PAGE ARE FILLED. IF NOT : ADD ERROR CLASS ON INPUT
+         AND INCREMENT ERROR COUNTER */
+      $('#' + step + ' input, textarea').each(function(){
+          if($(this).val() == '')
+          {
+               if(!$(this).hasClass('error-class'))
+                   $(this).addClass('error-class')
+
+              err++;
+          }
+          else
+          {
+               if($(this).hasClass('error-class'))
+                   $(this).removeClass('error-class')
+          }
+      });
+
+      /* IF ERROR COUNTER == 0 ( ie. NO ERRORS FOUND )
+             => PROCEED TO NEXT STEP
+      */
+      if(err == 0)
+      {
+          to_sel.trigger('click');
+
+          if(to_sel.hasClass('start-class'))
+          {
+             $('.prevBtn').addClass('disabled-control');
+             $('.nextBtn').removeClass('disabled-control');
+          }
+          else if(to_sel.hasClass('end-class'))
+          {
+              $('.nextBtn').addClass('disabled-control');
+              $('.prevBtn').removeClass('disabled-control');
+          }
+          else
+          {
+              $('.nextBtn').removeClass('disabled-control');
+              $('.prevBtn').removeClass('disabled-control');
+          }
+      }
+  });
+
+ /* SHOW AND HIDE ERROR CLASS AS USER TYPES */
+ $(document).on('input', 'input, textarea', function(){
+    if($(this).val() == '')
+    {
+         if(!$(this).hasClass('error-class'))
+            $(this).addClass('error-class');
+    }
+    else
+    {
+        if($(this).hasClass('error-class'))
+            $(this).removeClass('error-class')
+    }
+});
+
+  /* FUNCTION WHICH RETURNS THE ID OF CURRENT VISIBLE PAGE */
+  function get_current_page_id()
+  {
+      return $(".setup-content:visible").attr('id');
+  }
+
+  $('div.setup-panel div a.btn-primary').trigger('click');
+});
+
+</script>
