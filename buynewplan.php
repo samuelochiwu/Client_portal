@@ -72,7 +72,7 @@ if(isset($_REQUEST['cemail'])){
 if(isset($_SESSION['cgsm'])){
   $cgsm = $_SESSION['cgsm'];
 }
-//print_r($_SESSION);
+print_r($_SESSION);
 ?>
         <script type="text/javascript">
         function checkForm(form) {
